@@ -1,4 +1,14 @@
 .container {
-    border: 2px solid red;
-    height: 100px;
+    width: 640px;
+    height: 640px;
+    display: flex; /* let container become flex. element inside will become a row*/
+    flex-wrap: wrap; /* let the row wrap to the next line when it reaches the end of the container */
+    border: 2px solid black;
+}
+
+.square {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid lightgray;
 }
