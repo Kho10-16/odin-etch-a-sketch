@@ -1,12 +1,21 @@
 const container = document.querySelector(".container");
+const GRID_SIZE_PX = 640;
 
-for(let i = 0; i < 16 * 16; i++){
-    const square = document.createElement("div");
-    square.classList.add("square");
+function createGrid(size){
+    const squareSize = GRID_SIZE_PX / size;
 
-    square.addEventListener("mouseenter",() => {
-        square.style.backgroundColor = "black";
-    });
+    for(let i = 0; i < size * size; i++){
+        const square = document.createElement("div");
+        square.classList.add("square");
+        square.style.width = `${squareSize}px`;
+        square.style.height = `${squareSize}px`;
+        
+        square.addEventListener("mouseover", () => {
+            square.style.backgroundColor = "black";
+        });
 
-    container.appendChild(square);
+        container.appendChild(square);
+    }
 }
+
+createGrid(16);
