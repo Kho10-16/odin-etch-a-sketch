@@ -1,6 +1,13 @@
 const container = document.querySelector(".container");
 const GRID_SIZE_PX = 640;
 
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
 function createGrid(size){
     container.innerHTML = ""; /* Clear the container before creating a new grid */
     const squareSize = GRID_SIZE_PX / size;
@@ -11,8 +18,8 @@ function createGrid(size){
         square.style.width = `${squareSize}px`;
         square.style.height = `${squareSize}px`;
         
-        square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "black";
+        square.addEventListener("mouseenter", () => {
+            square.style.backgroundColor = getRandomColor();
         });
 
         container.appendChild(square);
